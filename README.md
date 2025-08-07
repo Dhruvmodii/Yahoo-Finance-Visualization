@@ -54,3 +54,6 @@ numpy
 Dhruv Modi
 
 GitHub: @Dhruvmodii
+
+⚠️ Disclaimer
+This app is for educational purposes only. It does not offer financial advice. Always consult a professional before making trading decisions.
