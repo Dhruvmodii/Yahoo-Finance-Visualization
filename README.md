@@ -13,9 +13,13 @@ Live Demo
 - 🧮 Uses Yahoo Finance API to fetch data  
 
 🗃️ File Structure
-📁stock-price-predictor/
+
+ 📁stock-price-predictor/
+ 
    ├── app.py 
+     
    ├── keras model.h5 
+   
    ├── requirements.txt 
 
 💻 Setup Instructions
