@@ -41,13 +41,21 @@ Live Demo
 The keras model.h5 is a pre-trained LSTM model trained on stock price sequences. It uses the past 100 days of closing prices to predict the next 30 days.
 
 📦 Requirements
+
 See requirements.txt for all dependencies. Major ones include:
+
 streamlit
+
 yfinance
+
 tensorflow
+
 pandas
+
 scikit-learn
+
 matplotlib
+
 numpy
 
 📸 Preview
