@@ -1,6 +1,9 @@
 # Yahoo-Finance-Visualization
 This is a Streamlit-based finance visualization and forecasting tool that predicts the next **30 days of stock closing prices** using a pre-trained deep learning model (`keras model.h5`). It also provides useful financial insights like moving averages, daily return %, and 30-day rolling volatility.
 
+#Live Demo
+ https://yahoofinance-v.streamlit.app/
+ 
 🚀 Features
 - 📊 Historical stock closing prices with 365, 730, and 1095-day Moving Averages  
 - 🔄 Daily price change percentage chart  
