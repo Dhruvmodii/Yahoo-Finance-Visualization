@@ -14,9 +14,9 @@ Live Demo
 
 🗃️ File Structure
 📁stock-price-predictor/
-   ├── app.py # Main Streamlit app
-   ├── keras model.h5 # Pre-trained LSTM model
-   ├── requirements.txt # Python dependencies
+   ├── app.py 
+   ├── keras model.h5 
+   ├── requirements.txt 
 
 💻 Setup Instructions
 1. Clone the Repository
