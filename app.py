@@ -76,54 +76,10 @@ if st.button("🔍 Predict"):
         scaler = MinMaxScaler(feature_range=(0, 1))
         scaled_data = scaler.fit_transform(close_data)
 
-        # ---------- Load Pre-trained Model ----------
         
-        if not os.path.exists("keras_model.keras"):
-         st.error("❌ keras_model.h5 not found. Please ensure it's in the app directory.")
-         st.stop()
+        
+        
 
-        model = load_model("keras_model.keras")
-
-        # ---------- Predict Next 30 Days ----------
-        last_100 = scaled_data[-100:]
-        input_seq = list(last_100.flatten())
-        predicted_scaled = []
-
-        for _ in range(30):
-            input_arr = np.array(input_seq[-100:]).reshape(1, 100, 1)
-            pred = model.predict(input_arr, verbose=0)[0][0]
-            predicted_scaled.append(pred)
-            input_seq.append(pred)
-
-        predicted_prices = scaler.inverse_transform(np.array(predicted_scaled).reshape(-1, 1))
-
-        # ---------- Display Prediction ----------
-        st.subheader("🔮 Predicted Next 30 Days Prices")
-        future_dates = pd.date_range(df["Date"].iloc[-1] + timedelta(days=1), periods=30)
-
-        pred_df = pd.DataFrame({
-            "Date": future_dates,
-            "Predicted": predicted_prices.flatten()
-        })
-        pred_df.set_index("Date", inplace=True)
-
-        st.line_chart(pred_df)
-
-        # ---------- Chart 4: Predicted Price + MA ----------
-        pred_df["MA365"] = pred_df["Predicted"].rolling(365).mean()
-        pred_df["MA730"] = pred_df["Predicted"].rolling(730).mean()
-        pred_df["MA1095"] = pred_df["Predicted"].rolling(1095).mean()
-
-        st.subheader("📉 Predicted Prices with Moving Averages")
-        fig2, ax2 = plt.subplots(figsize=(12, 6))
-        ax2.plot(pred_df.index, pred_df["Predicted"], label="Predicted Price", color='blue')
-        ax2.plot(pred_df.index, pred_df["MA365"], label="365 MA", color='green')
-        ax2.plot(pred_df.index, pred_df["MA730"], label="730 MA", color='orange')
-        ax2.plot(pred_df.index, pred_df["MA1095"], label="1095 MA", color='red')
-        ax2.set_xlabel("Date")
-        ax2.set_ylabel("Price")
-        ax2.legend()
-        st.pyplot(fig2)
 
 
 
