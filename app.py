@@ -77,10 +77,12 @@ if st.button("🔍 Predict"):
         scaled_data = scaler.fit_transform(close_data)
 
         # ---------- Load Pre-trained Model ----------
-        model = load_model("keras_model.h5")
+        
         if not os.path.exists("keras_model.h5"):
          st.error("❌ keras_model.h5 not found. Please ensure it's in the app directory.")
          st.stop()
+
+        model = load_model("keras_model.h5")
 
         # ---------- Predict Next 30 Days ----------
         last_100 = scaled_data[-100:]
@@ -122,6 +124,7 @@ if st.button("🔍 Predict"):
         ax2.set_ylabel("Price")
         ax2.legend()
         st.pyplot(fig2)
+
 
 
 
