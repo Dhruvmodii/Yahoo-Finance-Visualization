@@ -6,6 +6,15 @@ from datetime import datetime, timedelta
 from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
+import streamlit as st
+from keras.models import load_model
+
+try:
+    model = load_model("keras model.h5")
+except Exception as e:
+    st.error("Failed to load the model. Please check the format or compatibility.")
+    st.exception(e)
+    st.stop()
 
 # ---------- App Config ----------
 st.set_page_config(page_title="📈 Stock Price Predictor", layout="wide")
@@ -118,5 +127,6 @@ if st.button("🔍 Predict"):
         ax2.set_ylabel("Price")
         ax2.legend()
         st.pyplot(fig2)
+
 
 
