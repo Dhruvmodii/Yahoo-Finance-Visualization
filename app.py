@@ -76,7 +76,7 @@ if st.button("🔍 Predict"):
         scaled_data = scaler.fit_transform(close_data)
 
         # ---------- Load Pre-trained Model ----------
-        model = load_model("keras_model.h5",save_format="keras")
+        model = load_model("keras_model.h5")
 
         # ---------- Predict Next 30 Days ----------
         last_100 = scaled_data[-100:]
@@ -118,6 +118,7 @@ if st.button("🔍 Predict"):
         ax2.set_ylabel("Price")
         ax2.legend()
         st.pyplot(fig2)
+
 
 
 
