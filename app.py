@@ -18,7 +18,7 @@ ticker = st.text_input("Enter Stock Ticker (e.g., AAPL, TSLA, MSFT):", "AAPL")
 start_date = st.date_input("Start Date", datetime(2010, 1, 1))
 end_date = st.date_input("End Date", datetime.today())
 
-if st.button("🔍 Predict"):
+if st.button("🔍 visualize"):
     # ---------- Download Data ----------
     df = yf.download(ticker, start=start_date, end=end_date)
 
@@ -79,6 +79,7 @@ if st.button("🔍 Predict"):
         
         
         
+
 
 
 
